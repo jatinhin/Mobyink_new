@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { Stack } from "@mui/material";
 import Slider from "../../utils/Slider";
@@ -18,5 +19,20 @@ const Home = () => {
     </Stack>
   );
 };
+=======
+import React from 'react'
+import ScrollingImages from './parts/ScrollingImages'
+import ThreeSection from './parts/ThreeSection'
+import CardSection from './parts/ScrollingImages'
+
+const Home = () => {
+  return (
+    <>
+      <ThreeSection />
+      <CardSection />
+    </>
+  );
+}
+>>>>>>> main
 
 export default Home;
