@@ -1,11 +1,15 @@
 import React from 'react'
-import { Stack } from '@mui/material'
+import ScrollingImages from './parts/ScrollingImages'
+import ThreeSection from './parts/ThreeSection'
+import CardSection from './parts/ScrollingImages'
 
 const Home = () => {
   return (
-    <Stack width={"100%"} height={"100%"}>
-    </Stack>
-  )
+    <>
+      <ThreeSection />
+      <CardSection />
+    </>
+  );
 }
 
 export default Home
