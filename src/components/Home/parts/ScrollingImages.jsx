@@ -157,16 +157,15 @@
 
 import React, { useState } from "react";
 import "./ScrollingImages.css"; // CSS file for styles
-import Image1 from "../../../assests/Image1.webp"
-import Image2 from "../../../assests/Image2.webp";
-import Image3 from "../../../assests/Image3.webp";
-import Image4 from "../../../assests/Image4.webp";
-import Image5 from "../../../assests/Image5.webp";
+import Image3 from "../../../assests/1.jpg"
+import Image2 from "../../../assests/2.jpg";
+import Image1 from "../../../assests/3.jpg";
+import Image4 from "../../../assests/4.jpg";
+import Image5 from "../../../assests/5.jpg";
 import { Box, Stack, Typography } from "@mui/material";
-const CardSection = () => {
+const ScrollingImages = () => {
   const [activeCard, setActiveCard] = useState(0); // State to track active card
 
-  const imagePaths = [Image1, Image2, Image3, Image4, Image5];
   const lists = [
     {
       src: Image1,
@@ -175,23 +174,23 @@ const CardSection = () => {
     },
     {
       src: Image2,
-      Title: "5+",
-      Description: "In Mobile App Marketing",
+      Title: "3+",
+      Description: "In Digital Marketing",
     },
     {
       src: Image3,
-      Title: "5+",
-      Description: "In Mobile App Marketing",
+      Title: "90%",
+      Description: "Client Retention",
     },
     {
       src: Image4,
-      Title: "5+",
-      Description: "In Mobile App Marketing",
+      Title: "150+",
+      Description: "Project Completed",
     },
     {
       src: Image5,
-      Title: "5+",
-      Description: "In Mobile App Marketing",
+      Title: "",
+      Description: "The last of us",
     },
   ];
   const handleCardHover = (index) => {
@@ -208,45 +207,49 @@ const CardSection = () => {
           fontSize={"48px"}
           fontWeight={"bold"}
         >
-          Our Journey
+          Our Journey{" "}
           <span style={{ fontSize: "48px", color: "#0d6efd" }}>So Far</span>
         </Typography>
       </Stack>
       <Stack
+      pt={5}
         direction={"row"}
-        width={"80%"}
+        width={"90%"}
         className="container"
         justifyContent={"center"}
       >
-        
-        {lists.map((d, index) => (
-          <div
-            key={index}
-            className={`card ${activeCard === index ? "active" : ""}`}
-            onMouseEnter={() => handleCardHover(index)}
-            style={{ backgroundImage: `url(${d.src})` }}
-          >
-            <Typography
-              color={"white"}
-              fontSize={"50px"}
-              fontWeight={"bold"}
-              display={activeCard!==index ? "none" : "block"}
+        <Stack width={"100%"} direction={"row"} justifyContent={"center"} height={"100%"}>
+          {lists.map((d, index) => (
+            <div
+              key={index}
+              className={`card ${activeCard === index ? "active" : ""}`}
+              onMouseEnter={() => handleCardHover(index)}
+              style={{ backgroundImage: `url(${d.src})` }}
             >
-              {d.Title}
-            </Typography>
-            <Typography
-              color={"white"}
-              fontSize={"30px"}
-              display={activeCard!==index ? "none" : "block"}
-              fontWeight={"bold"}
-            >
-              {d.Description}
-            </Typography>
-          </div>
-        ))}
+              <Typography
+              pl={5}
+                color={"white"}
+                fontSize={"80px"}
+                fontWeight={"bold"}
+                display={activeCard !== index ? "none" : "block"}
+              >
+                {d.Title}
+              </Typography>
+              <Typography
+              pl={5}
+                color={"white"}
+                fontSize={"25px"}
+                display={activeCard !== index ? "none" : "block"}
+                fontWeight={"bold"}
+              >
+                {d.Description}
+              </Typography>
+            </div>
+          ))}
+        </Stack>
       </Stack>
     </Stack>
   );
 };
 
-export default CardSection;
+export default ScrollingImages;

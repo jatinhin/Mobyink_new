@@ -8,14 +8,15 @@ const TabLineSection = () => {
     <>
       <Stack backgroundColor={"#337FFF"}>
         <Nav />
-        <Stack margin={"0 auto"}>
+        <Stack>
           <Stack
-            width={"80%"}
-            height={"70vh"}
+          margin={"0 97px"}
+            width={"57%"}
+            height={"90vh"}
             gap={3}
             justifyContent={"center"}
           >
-            <Typography variant="h4" fontWeight={"bold"} color={"white"}>
+            <Typography variant="h3" fontWeight={"bold"} color={"white"}>
               Pioneering The Digital Frontier For Market Leaders
             </Typography>
             <Typography variant="h6" color={"white"}>

@@ -441,7 +441,6 @@ const Nav = () => {
                     onMouseEnter={() => handleMouseEnter(1)}
                     onMouseLeave={() => handleMouseLeave(1)}
                     sx={{
-                      height: isPopoverOpen(1) ? "410px" : 0,
                       width: isPopoverOpen(1) ? "100vw" : 0,
                       opacity: isPopoverOpen(1) ? 1 : 0,
                       transition:

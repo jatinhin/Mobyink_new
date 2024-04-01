@@ -6,7 +6,7 @@ const Steps = () => {
   return (
     <Stack margin={"0 auto"} pt={3} pb={3}>
       <Stack
-        width={"90%"}
+        width={"95%"}
         margin={"0 auto"}
         direction={{
           xs: "column",

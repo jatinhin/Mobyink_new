@@ -12,7 +12,8 @@ const ShappingTheFuture = () => {
       mb={{ xs: 5, lg: 10 }}
     >
       <Stack
-        width={"80%"}
+      justifyContent={"space-between"}
+        width={"85%"}
         margin={"0 auto"}
         direction={{
           xs: "column",
@@ -22,7 +23,7 @@ const ShappingTheFuture = () => {
         <Stack
           width={{
             xs: "100%",
-            lg: "55%",
+            lg: "45%",
           }}
         >
           <Typography
@@ -30,7 +31,7 @@ const ShappingTheFuture = () => {
             fontSize={{
               xs: "6px",
               sm: "18px",
-              lg: "36px",
+              lg: "42px",
             }}
             textAlign={{
               xs: "center",
@@ -45,14 +46,14 @@ const ShappingTheFuture = () => {
         <Stack
           width={{
             xs: "100%",
-            lg: "45%",
+            lg: "50%",
           }}
         >
           <Typography
             fontSize={{
               xs: "12px",
               sm: "14px",
-              lg: "16px",
+              lg: "20px",
             }}
             textAlign={{
               xs: "justify",
