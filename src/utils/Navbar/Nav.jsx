@@ -351,8 +351,14 @@ const Nav = () => {
     <>
       {/* for Desktop view */}
 
-      <Stack position={"relative"} p={"0px 90px"} pt={1}>
+      <Stack
+        position={"relative"}
+        p={"0px 90px"}
+        zIndex={2}
+        backgroundColor={"#84b0f3"}
+      >
         <Stack
+          mt={1}
           height={"80px"}
           zIndex={11}
           sx={{
