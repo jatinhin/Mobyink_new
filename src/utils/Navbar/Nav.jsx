@@ -355,7 +355,6 @@ const Nav = () => {
         position={"relative"}
         p={"0px 90px"}
         zIndex={2}
-        backgroundColor={"#84b0f3"}
       >
         <Stack
           mt={1}

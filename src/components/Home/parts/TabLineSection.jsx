@@ -25,6 +25,7 @@ const TabLineSection = () => {
         <Nav />
         <Stack>
           <Stack
+          zIndex={1}
           margin={"0 97px"}
             width={"57%"}
             height={"90vh"}

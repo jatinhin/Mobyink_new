@@ -9,6 +9,9 @@ import SharkTankClients from "./parts/SharkTankClients";
 // import ThreeSection from './parts/ThreeSection'
 import ScrollingImages from "./parts/ScrollingImages";
 import LatestInsights from "./parts/LatestInsights";
+import Footer from "../../utils/Footer";
+import LetsConnect from "./parts/LetsConnect";
+import ServiceType from "./parts/ParallaxEffect";
 const Home = () => {
   return (
     <Stack width={"100%"} height={"100%"} bgcolor={"#F5F7FF"}>
@@ -21,6 +24,9 @@ const Home = () => {
        {/* <ThreeSection /> */}
       <ScrollingImages/>
       <LatestInsights/>
+      <ServiceType/>
+      <LetsConnect/>
+      <Footer/>
     </Stack>
   );
 };
