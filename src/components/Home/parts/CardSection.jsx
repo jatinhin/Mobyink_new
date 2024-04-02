@@ -52,7 +52,8 @@ const CardSection = () => {
   return (
     <>
       <Stack
-        width={"90%"}
+      pt={10}
+        width={"85%"}
         height={"100%"}
         direction={{
           xs: "column",
@@ -83,13 +84,12 @@ const CardSection = () => {
                   "linear-gradient(90deg, rgba(41,78,163,1) 0%, rgba(7,7,75,1) 100%, rgba(0,212,255,1) 100%)",
               }}
             >
-              <Stack p={3} boxSizing={"border-box"} gap={10}>
+              <Stack p={"40px"} boxSizing={"border-box"} gap={10}>
                 <Link to={cardContent1.Link} style={{ textDecoration: "none" }}>
                   <Typography
-                    variant="h3"
+                    variant="h2"
                     fontWeight={"bold"}
                     color={"white"}
-                    mt={3}
                     sx={{
                       "&:hover": {
                         color: "white",
@@ -118,7 +118,7 @@ const CardSection = () => {
         <Stack
           width={{
             xs: "100%",
-            lg: "45%",
+            lg: "47%",
           }}
           gap={4}
           position={{
@@ -126,7 +126,7 @@ const CardSection = () => {
             lg: "absolute",
           }}
           right={0}
-          top={"20%"}
+          top={"25%"}
         >
           {cardContent2.map((content) => (
             <Stack
@@ -139,10 +139,10 @@ const CardSection = () => {
                   "linear-gradient(90deg, rgba(13,76,138,1) 0%, rgba(15,81,91,1) 100%)",
               }}
             >
-              <Stack p={3} boxSizing={"border-box"} gap={10} mt={3}>
+              <Stack p={"40px"} boxSizing={"border-box"} gap={10} mt={3}>
                 <Link to={cardContent2.Link} style={{ textDecoration: "none" }}>
                   <Typography
-                    variant="h3"
+                    variant="h2"
                     fontWeight={"bold"}
                     color={"white"}
                     sx={{

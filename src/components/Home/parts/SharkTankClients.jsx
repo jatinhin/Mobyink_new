@@ -13,7 +13,7 @@ const SharkTankClients = () => {
             fontSize={{
               xs: "14px",
               sm: "18px",
-              lg: "36px",
+              lg: "50px",
             }}
             fontWeight={"bold"}
             color={"black"}
@@ -303,6 +303,7 @@ const SharkTankClients = () => {
       <Typography
         variant="p"
         fontSize={"16px"}
+        fontWeight={"bold"}
         lineHeight={"1.9"}
         color={"#0D6EFD"}
         sx={{

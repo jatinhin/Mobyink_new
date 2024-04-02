@@ -49,11 +49,11 @@ const Slider = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 4,
+      items: 5,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      items: 5,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -77,6 +77,7 @@ const Slider = () => {
             sm: "315px ",
             md: "600px",
             lg: "1018px",
+            xl:"1200px",
           },
           top: {
             xs: "3%",
@@ -87,6 +88,8 @@ const Slider = () => {
             xs: "4%",
             sm: "4%",
             md: "4%",
+            lg:"4%",
+            xl:"4%",
           },
         }}
         top={"27%"}
@@ -112,7 +115,7 @@ const Slider = () => {
                 height: {
                   xs: "25px",
                   sm: "35px",
-                  md: "50px",
+                  md: "40px",
                 },
               }}
             >
