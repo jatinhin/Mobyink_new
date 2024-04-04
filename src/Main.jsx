@@ -7,6 +7,8 @@ import Industries from "./components/Industries/Industries";
 import Portfolio from "./components/Resources/Portfolio/Portfolio";
 import SeoInIndia from "./components/Resources/Index/SeoInIndia/SeoInIndia";
 import CaseStudies from "./components/CaseStudy/CaseStudies";
+import App_marketing from "./components/Services/App_marketing";
+import ScrollingSection from "./components/Services/ScrollingSection";
 
 
 const Main = () => {
