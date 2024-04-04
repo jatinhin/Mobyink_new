@@ -23,9 +23,10 @@ const TabLineSection = () => {
           <source src={bannerVideo} type="video/mp4" />
         </video>
         <Nav />
-        <Stack zIndex={1}>
+        <Stack>
           <Stack
-            margin={"0 97px"}
+          zIndex={1}
+          margin={"0 97px"}
             width={"57%"}
             height={"90vh"}
             gap={3}
