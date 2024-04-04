@@ -15,6 +15,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const services = [
   {
+    link:"/Services/App-Marketing",
     title: "App Marketing",
     features: [
       {
@@ -351,11 +352,7 @@ const Nav = () => {
     <>
       {/* for Desktop view */}
 
-      <Stack
-        position={"relative"}
-        p={"0px 90px"}
-        zIndex={2}
-      >
+      <Stack position={"relative"} p={"0px 90px"} zIndex={2}>
         <Stack
           mt={1}
           height={"80px"}
@@ -476,22 +473,30 @@ const Nav = () => {
                             </Typography>
                             <Stack>
                               {services.map((service, index) => (
-                                <Typography
-                                  pt={1}
-                                  pb={1}
-                                  key={index}
-                                  sx={{
-                                    "&:hover": {
-                                      color: "#0D6EFD",
-                                      cursor: "pointer",
-                                    },
+                                <Link
+                                  to={service.link}
+                                  style={{
+                                    textDecoration: "none",
+                                    color: "black",
                                   }}
-                                  onMouseEnter={() =>
-                                    setHoveredTitle(service.title)
-                                  }
                                 >
-                                  {service.title}
-                                </Typography>
+                                  <Typography
+                                    pt={1}
+                                    pb={1}
+                                    key={index}
+                                    sx={{
+                                      "&:hover": {
+                                        color: "#0D6EFD",
+                                        cursor: "pointer",
+                                      },
+                                    }}
+                                    onMouseEnter={() =>
+                                      setHoveredTitle(service.title)
+                                    }
+                                  >
+                                    {service.title}
+                                  </Typography>
+                                </Link>
                               ))}
                             </Stack>
                           </Stack>
