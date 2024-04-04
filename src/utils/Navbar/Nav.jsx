@@ -241,7 +241,7 @@ const services = [
 const resources = [
   {
     title: "Portfolio",
-    to: "/Portfolio",
+    to: "/portfolio",
     windowScrollAmount: 100,
   },
   {
@@ -268,42 +268,42 @@ const index = [
   },
   {
     title: "SEO Company Jaipur",
-    to: "/SEO/Jaipur",
+    to: "/SEO/India",
     windowScrollAmount: 200,
   },
   {
     title: "SEO Company Delhi",
-    to: "/SEO/Delhi",
+    to: "/SEO/India",
     windowScrollAmount: 300,
   },
   {
     title: "SEO Company Bangalore",
-    to: "/SEO/Bangalore",
+    to: "/SEO/India",
     windowScrollAmount: 400,
   },
   {
     title: "SEO Company Gurgaon",
-    to: "/SEO/Gurgaon",
+    to: "/SEO/India",
     windowScrollAmount: 500,
   },
   {
     title: "SEO Company Mumbai",
-    to: "/SEO/Mumbai",
+    to: "/SEO/India",
     windowScrollAmount: 600,
   },
   {
     title: "SEO Company Noida",
-    to: "/SEO/Noida",
+    to: "/SEO/India",
     windowScrollAmount: 700,
   },
   {
     title: "SEO Company Pune",
-    to: "/SEO/Pune",
+    to: "/SEO/India",
     windowScrollAmount: 800,
   },
   {
     title: "SEO Company Surat",
-    to: "/SEO/Surat",
+    to: "/SEO/India",
     windowScrollAmount: 900,
   },
 ];
@@ -352,7 +352,15 @@ const Nav = () => {
     <>
       {/* for Desktop view */}
 
-      <Stack position={"relative"} p={"0px 90px"} zIndex={2}>
+
+      <Stack
+        position={"relative"}
+        p={"0px 90px"}
+        zIndex={2}
+        backgroundColor={"transparent"}
+      >
+
+
         <Stack
           mt={1}
           height={"80px"}
@@ -598,7 +606,7 @@ const Nav = () => {
                 }}
               >
                 <Box>
-                  <Link to="#" className="navlink-link">
+                  <Link to="/about-us" className="navlink-link">
                     <Box
                       display={"flex"}
                       justifyContent="center"
@@ -627,7 +635,7 @@ const Nav = () => {
               {/* //!Industries */}
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Box>
-                  <Link to="#" className="navlink-link">
+                  <Link to="/industries" className="navlink-link">
                     <Box
                       display={"flex"}
                       justifyContent="center"
@@ -658,7 +666,7 @@ const Nav = () => {
                     position: "relative",
                   }}
                 >
-                  <Link to="#" className="navlink-link">
+                  <Link to="/case-studies" className="navlink-link">
                     <Box
                       display={"flex"}
                       justifyContent="center"
