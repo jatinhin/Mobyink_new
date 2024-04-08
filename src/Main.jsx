@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router";
 
 import Home from "./components/Home/Home";
 
+
 import AnnimationVideoEditing from "./components/Services/AnimationVideoEditing/AnimationVideoEditing";
 import AppDevlopment from "./components/Services/AppDevelopment/AppDevelopment";
 import AppMarketing from "./components/Services/AppMarketing/AppMarketing";
@@ -13,10 +14,12 @@ import SocialMediaManagement from "./components/Services/SocialMediaManagement/S
 import UiUxDesignPrototype from "./components/Services/UiUxDesignPrototype/UiUxDesignPrototype";
 import WebsiteDevelopment from "./components/Services/WebsiteDevelopment/WebsiteDevelopment";
 
+
 import AboutUs from "./components/AboutUs/AboutUs";
 import Industries from "./components/Industries/Industries";
 import Portfolio from "./components/Resources/Portfolio/Portfolio";
 import CaseStudies from "./components/CaseStudy/CaseStudies";
+
 import CaseStudiesInnerPage from "./components/CaseStudy/CaseStudiesInnerPage";
 import SeoInIndia from "./components/Resources/Index/SeoInIndia/SeoInIndia";
 import Career from "./components/Resources/Career/Career";
@@ -32,6 +35,7 @@ import SeoInGurgaon from "./components/Resources/Index/SeoInGurgaon/SeoInGurgaon
 import SeoInMumbai from "./components/Resources/Index/SeoInMumbai/SeoInMumbai";
 import SeoInPune from "./components/Resources/Index/SeoInPune/SeoInPune";
 import SeoInSurat from "./components/Resources/Index/SeoInSurat/SeoInSurat";
+
 
 const Main = () => {
   return (
@@ -85,6 +89,7 @@ const Main = () => {
           element={<WebsiteDevelopment />}
         />
 
+
         <Route exact path="/about-us" element={<AboutUs />} />
         <Route exact path="/industries" element={<Industries />} />
         <Route exact path="/case-studies" element={<CaseStudies />} />
@@ -96,6 +101,7 @@ const Main = () => {
         <Route exact path="/portfolio" element={<Portfolio />} />
 
         <Route exact path="/SEO/India" element={<SeoInIndia />} />
+
         <Route exact path="/SEO/Bangalore" element={<SeoInBangalore />} />
         <Route exact path="/SEO/Noida" element={<SeoInNoida />} />
         <Route exact path="/SEO/Delhi" element={<SeoInDelhi />} />
@@ -114,6 +120,7 @@ const Main = () => {
           element={<AppMarketing />}
         />
         <Route exact path="/dummy" element={<ScrollingSection />} />
+
       </Routes>
     </>
   );
