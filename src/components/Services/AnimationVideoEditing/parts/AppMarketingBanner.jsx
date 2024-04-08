@@ -1,24 +1,42 @@
-import { Stack, Typography } from '@mui/material'
-import React from 'react'
-import App_marketing_banner from "../../assests/App-Marketing-banner.jpeg"
-import Nav from '../../utils/Navbar/Nav';
+import { Stack, Typography } from "@mui/material";
+import React from "react";
+import App_marketing_banner from "../../../../assests/App-Marketing-banner.jpeg";
+import Nav from "../../../../utils/Navbar/Nav";
 const AppMarketingBanner = () => {
   return (
     <Stack
-    height={"100vh"}
+      height={{
+        xs: "80vh",
+        lg: "100vh",
+      }}
       sx={{
         backgroundImage: `url(${App_marketing_banner})`,
         backgroundSize: "cover",
       }}
     >
       <Nav />
-      <Stack margin={"230px 96px"} gap={"10px"}>
-        <Typography color={"white"} fontWeight={"bold"} fontSize={"45px"}>
+      <Stack
+        margin={{
+          xs: "100px 20px",
+          lg: "230px 96px",
+        }}
+        gap={"10px"}
+      >
+        <Typography
+          color={"white"}
+          fontWeight={"bold"}
+          fontSize={{
+            xs: "30px",
+            lg: "40px",
+          }}
+        >
           Skyrocket Your App Now
         </Typography>
-        <Typography color={"white"} >Reach in-app audience programmatically</Typography>
+        <Typography color={"white"}>
+          Reach in-app audience programmatically
+        </Typography>
         <Stack
-        mt={2}
+          mt={2}
           justifyContent={"center"}
           alignItems={"center"}
           width={"140px"}
@@ -38,6 +56,6 @@ const AppMarketingBanner = () => {
       </Stack>
     </Stack>
   );
-}
+};
 
-export default AppMarketingBanner
+export default AppMarketingBanner;

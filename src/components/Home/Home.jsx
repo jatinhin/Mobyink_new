@@ -12,7 +12,7 @@ import LatestInsights from "./parts/LatestInsights";
 import Footer from "../../utils/Footer";
 import LetsConnect from "./parts/LetsConnect";
 import ServiceType from "./parts/ParallaxEffect";
-import ScrollingSection from "../Services/ScrollingSection";
+import ScrollingSection from "./parts/ScrollingSection";
 import GoToTop from "../../utils/GoToTop";
 const Home = () => {
   return (
@@ -26,7 +26,7 @@ const Home = () => {
       {/* <ScrollingSection /> */}
       <ScrollingImages />
       <LatestInsights />
-      {/* <ServiceType /> */}
+      <ServiceType />
       <LetsConnect />
       <Footer />
       <GoToTop />
