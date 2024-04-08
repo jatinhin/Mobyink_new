@@ -7,14 +7,28 @@ import Nav from "../../../utils/Navbar/Nav";
 const TabLineSection = () => {
   return (
     <>
-      <Stack>
+      <Stack position="relative">
+        {/* Blue overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(13, 110, 253, 0.5)", // Semi-transparent blue
+            zIndex: 2, // Ensure it's above the video
+          }}
+        ></div>
+
+        {/* Video */}
         <video
           style={{
             position: "absolute",
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            zIndex: "1",
+            zIndex: 1, // Ensure video is below the overlay
           }}
           autoPlay
           loop
@@ -22,17 +36,39 @@ const TabLineSection = () => {
         >
           <source src={bannerVideo} type="video/mp4" />
         </video>
+
         <Nav />
-        <Stack>
+
+
+        <Stack zIndex={3}>
           <Stack
-          zIndex={1}
-          margin={"0 97px"}
-            width={"57%"}
+            zIndex={3}
+            margin={{
+              xxl: "0 97px",
+              xl: "0 97px",
+              lg: "0 97px",
+              sm: "0 auto",
+            }}
+            width={{
+              xxl: "60%",
+              xl: "60%",
+              lg: "60%",
+              sm: "90%",
+            }}
+
             height={"90vh"}
             gap={3}
             justifyContent={"center"}
           >
-            <Typography variant="h3" fontWeight={"bold"} color={"white"}>
+            <Typography
+              fontSize={{
+                xxl: "48px",
+                xl: "36px",
+                sm: "24px",
+              }}
+              fontWeight={"bold"}
+              color={"white"}
+            >
               Pioneering The Digital Frontier For Market Leaders
             </Typography>
             <Typography variant="h6" color={"white"}>

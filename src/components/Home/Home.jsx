@@ -12,7 +12,10 @@ import LatestInsights from "./parts/LatestInsights";
 import Footer from "../../utils/Footer";
 import LetsConnect from "./parts/LetsConnect";
 import ServiceType from "./parts/ParallaxEffect";
-import ScrollingSection from "../Services/ScrollingSection";
+
+import ScrollingSection from "./parts/ScrollingSection";
+import GoToTop from "../../utils/GoToTop";
+
 const Home = () => {
   return (
     <Stack width={"100%"} height={"100%"} bgcolor={"#F5F7FF"}>
@@ -22,13 +25,15 @@ const Home = () => {
       <ShappingTheFuture />
       <CardSection />
       <SharkTankClients />
-      <ScrollingSection />
-      {/* <ThreeSection /> */}
+
+      {/* <ScrollingSection /> */}
       <ScrollingImages />
       <LatestInsights />
-      {/* <ServiceType /> */}
+      <ServiceType />
+
       <LetsConnect />
       <Footer />
+      <GoToTop />
     </Stack>
   );
 };

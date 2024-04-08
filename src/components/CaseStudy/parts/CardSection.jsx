@@ -1,16 +1,25 @@
-import { Stack, Typography, Button } from "@mui/material";
+import { Stack, Typography, Button, Box } from "@mui/material";
 import React, { useState } from "react";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Link } from "react-router-dom";
-
+import service1 from "../../../assests/service1.webp";
+import service2 from "../../../assests/service2.webp";
+import service3 from "../../../assests/service3.webp";
+import service4 from "../../../assests/service4.webp";
+import service5 from "../../../assests/service5.webp";
+import service6 from "../../../assests/service6.webp";
 const CardSection = () => {
   // Define an array of blog data objects
   const [showAllBlogs, setShowAllBlogs] = useState(false);
   const [blogsToShow, setBlogsToShow] = useState(9);
-
+  const handleClick = () => {
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
   const blogData = [
     {
       id: 1,
+      img: service1,
       category: "Technology",
       title: "Introduction to React",
       content:
@@ -18,6 +27,7 @@ const CardSection = () => {
     },
     {
       id: 2,
+      img: service2,
       category: "Travel",
       title: "Exploring Europe",
       content:
@@ -25,6 +35,7 @@ const CardSection = () => {
     },
     {
       id: 3,
+      img: service3,
       category: "Food",
       title: "Delicious Italian Cuisine",
       content:
@@ -32,6 +43,7 @@ const CardSection = () => {
     },
     {
       id: 4,
+      img: service4,
       category: "Technology",
       title: "The Future of Artificial Intelligence",
       content:
@@ -39,6 +51,7 @@ const CardSection = () => {
     },
     {
       id: 5,
+      img: service5,
       category: "Science",
       title: "The Wonders of the Cosmos",
       content:
@@ -46,6 +59,7 @@ const CardSection = () => {
     },
     {
       id: 6,
+      img: service6,
       category: "Health",
       title: "Staying Healthy in a Busy World",
       content:
@@ -53,6 +67,7 @@ const CardSection = () => {
     },
     {
       id: 7,
+      img: service1,
       category: "Technology",
       title: "The Rise of Machine Learning",
       content:
@@ -60,6 +75,7 @@ const CardSection = () => {
     },
     {
       id: 8,
+      img: service2,
       category: "Travel",
       title: "Discovering South America",
       content:
@@ -67,6 +83,7 @@ const CardSection = () => {
     },
     {
       id: 9,
+      img: service3,
       category: "Food",
       title: "The Art of Sushi Making",
       content:
@@ -74,6 +91,7 @@ const CardSection = () => {
     },
     {
       id: 10,
+      img: service4,
       category: "Technology",
       title: "The Impact of Blockchain Technology",
       content:
@@ -81,6 +99,7 @@ const CardSection = () => {
     },
     {
       id: 11,
+      img: service5,
       category: "Science",
       title: "Exploring the Depths of the Ocean",
       content:
@@ -88,6 +107,7 @@ const CardSection = () => {
     },
     {
       id: 12,
+      img: service6,
       category: "Health",
       title: "The Importance of Mental Health",
       content:
@@ -95,6 +115,7 @@ const CardSection = () => {
     },
     {
       id: 13,
+      img: service1,
       category: "Technology",
       title: "The Evolution of Mobile Technology",
       content:
@@ -102,6 +123,7 @@ const CardSection = () => {
     },
     {
       id: 14,
+      img: service2,
       category: "Travel",
       title: "Journey Through Southeast Asia",
       content:
@@ -109,6 +131,7 @@ const CardSection = () => {
     },
     {
       id: 15,
+      img: service3,
       category: "Food",
       title: "Exploring Mediterranean Cuisine",
       content:
@@ -116,6 +139,7 @@ const CardSection = () => {
     },
     {
       id: 16,
+      img: service4,
       category: "Technology",
       title: "The Future of Virtual Reality",
       content:
@@ -123,6 +147,7 @@ const CardSection = () => {
     },
     {
       id: 17,
+      img: service5,
       category: "Science",
       title: "Unraveling the Mysteries of the Universe",
       content:
@@ -130,6 +155,7 @@ const CardSection = () => {
     },
     {
       id: 18,
+      img: service6,
       category: "Health",
       title: "The Benefits of Regular Exercise",
       content:
@@ -137,6 +163,7 @@ const CardSection = () => {
     },
     {
       id: 19,
+      img: service1,
       category: "Technology",
       title: "The Role of Artificial Intelligence in Healthcare",
       content:
@@ -144,6 +171,7 @@ const CardSection = () => {
     },
     {
       id: 20,
+      img: service2,
       category: "Travel",
       title: "Adventures in Africa",
       content:
@@ -151,6 +179,7 @@ const CardSection = () => {
     },
     {
       id: 21,
+      img: service3,
       category: "Food",
       title: "The Rich Flavors of Indian Cuisine",
       content:
@@ -158,6 +187,7 @@ const CardSection = () => {
     },
     {
       id: 22,
+      img: service4,
       category: "Technology",
       title: "Advancements in Renewable Energy",
       content:
@@ -165,6 +195,7 @@ const CardSection = () => {
     },
     {
       id: 23,
+      img: service5,
       category: "Science",
       title: "The Fascinating World of Genetics",
       content:
@@ -172,6 +203,7 @@ const CardSection = () => {
     },
     {
       id: 24,
+      img: service6,
       category: "Health",
       title: "The Importance of Sleep for Overall Well-being",
       content:
@@ -179,6 +211,7 @@ const CardSection = () => {
     },
     {
       id: 25,
+      img: service1,
       category: "Technology",
       title: "The Impact of 5G Technology on Communication",
       content:
@@ -186,6 +219,7 @@ const CardSection = () => {
     },
     {
       id: 26,
+      img: service2,
       category: "Travel",
       title: "Exploring the Beauty of Australia",
       content:
@@ -193,6 +227,7 @@ const CardSection = () => {
     },
     {
       id: 27,
+      img: service3,
       category: "Food",
       title: "Traditional Japanese Cuisine",
       content:
@@ -200,6 +235,7 @@ const CardSection = () => {
     },
     {
       id: 28,
+      img: service4,
       category: "Technology",
       title: "The Rise of E-Commerce",
       content:
@@ -207,6 +243,7 @@ const CardSection = () => {
     },
     {
       id: 29,
+      img: service5,
       category: "Science",
       title: "The Exploration of Mars",
       content:
@@ -214,6 +251,7 @@ const CardSection = () => {
     },
     {
       id: 30,
+      img: service6,
       category: "Health",
       title: "The Benefits of Meditation for Mental Health",
       content:
@@ -226,7 +264,7 @@ const CardSection = () => {
   };
 
   return (
-    <Stack width={"100%"} mt={10} mb={10} boxSizing={"border-box"}>
+    <Stack width={"100%"} mt={10} boxSizing={"border-box"}>
       <Stack width={"80%"} margin={"0 auto"}>
         <Stack>
           <Typography fontSize={"40px"} textAlign={"center"}>
@@ -245,13 +283,14 @@ const CardSection = () => {
             .map((blog) => (
               <Stack width={"30%"}>
                 <Link
-                  key={blog.id} // Add key prop to the Link component
-                  to={`/blog/${blog.id}`}
+                  key={blog.id}
+                  to={`/case-studies/${blog.id}`}
                   style={{ textDecoration: "none" }}
+                  onClick={handleClick}
                 >
                   <Stack
                     boxShadow={"0 0 10px 0 rgba(0,0,0,.15)"}
-                    height={"300px"}
+                    height={"100%"}
                     borderRadius={"10px"}
                     sx={{
                       textDecoration: "none",
@@ -264,25 +303,35 @@ const CardSection = () => {
                       justifyContent={"space-between"}
                       gap={1}
                     >
-                      <Stack gap={2}>
-                        <Typography
-                          fontSize={"12px"}
-                          color={"black"} // Move color style here
-                        >
-                          {blog.category}
-                        </Typography>
-                        <Typography
-                          fontSize={"24px"}
-                          fontWeight={"bold"}
-                          color={"black"} // Move color style here
-                        >
-                          {blog.title}
-                        </Typography>
-                        <Typography color={"black"}>
-                          {blog.content.length > 150
-                            ? blog.content.slice(0, 150) + "..."
-                            : blog.content}
-                        </Typography>
+                      <Stack height={"50%"}>
+                        <Box
+                          component="img"
+                          width={"100%"}
+                          height={"100%"}
+                          src={blog.img}
+                        />
+                      </Stack>
+                      <Stack height={"50%"}>
+                        <Stack gap={2}>
+                          <Typography
+                            fontSize={"12px"}
+                            color={"black"} // Move color style here
+                          >
+                            {blog.category}
+                          </Typography>
+                          <Typography
+                            fontSize={"24px"}
+                            fontWeight={"bold"}
+                            color={"black"} // Move color style here
+                          >
+                            {blog.title}
+                          </Typography>
+                          <Typography color={"black"}>
+                            {blog.content.length > 150
+                              ? blog.content.slice(0, 150) + "..."
+                              : blog.content}
+                          </Typography>
+                        </Stack>
                       </Stack>
                       <Stack direction={"row"} gap={0.5}>
                         <Typography
@@ -303,7 +352,7 @@ const CardSection = () => {
         {!showAllBlogs && blogsToShow < blogData.length && (
           <Stack
             margin={"0 auto"}
-            mt={5}
+            mt={10}
             width={"200px"}
             bgcolor={"#0D6EFD"}
             borderRadius={"8px"}
@@ -321,7 +370,7 @@ const CardSection = () => {
               variant="contained"
               onClick={handleShowMoreBlogs}
             >
-              Show More Blogs
+              Show More Studies
             </Typography>
           </Stack>
         )}
