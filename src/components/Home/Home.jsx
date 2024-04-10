@@ -29,7 +29,7 @@ const Home = () => {
       {/* <ScrollingSection /> */}
       <ScrollingImages />
       <LatestInsights />
-      <ServiceType />
+      {/* <ServiceType /> */}
 
       <LetsConnect />
       <Footer />
@@ -37,6 +37,5 @@ const Home = () => {
     </Stack>
   );
 };
-
 
 export default Home;
