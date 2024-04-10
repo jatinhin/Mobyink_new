@@ -16,7 +16,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const services = [
   {
-    link: "/Services/App-Marketing",
+
+    link: "/app-marketing",
 
     title: "App Marketing",
     features: [
@@ -40,7 +41,7 @@ const services = [
   },
   {
     title: "App Development",
-    link: "/Services/app-development",
+    link: "/app-development",
     features: [
       {
         name: "iOS App Development Services",
@@ -67,7 +68,7 @@ const services = [
   },
   {
     title: "Graphic Designing",
-    link: "/Services/graphic-designing",
+    link: "/graphic-designing",
     features: [
       {
         name: "Banner Design and Logo Design",
@@ -93,7 +94,7 @@ const services = [
   },
   {
     title: "Website Development",
-    link: "/Services/website-development",
+    link: "/website-development",
     features: [
       {
         name: "CMS development using WordPress, Shopify, and Wix",
@@ -119,7 +120,7 @@ const services = [
   },
   {
     title: "Pay Per Click Advertising",
-    link: "/Services/pay-per-click-advertising",
+    link: "/pay-per-click-advertising",
     features: [
       {
         name: "Google Ads",
@@ -145,7 +146,7 @@ const services = [
   },
   {
     title: "UI/UX Design & Prototype",
-    link: "/Services/ui-ux-design-prototype",
+    link: "/ui-ux-design-prototype",
     features: [
       {
         name: "Custom Web Design",
@@ -171,7 +172,7 @@ const services = [
   },
   {
     title: "Social Media Management",
-    link: "/Services/social-media-management",
+    link: "/social-media-management",
     features: [
       {
         name: "Strategy with Content Creation",
@@ -197,7 +198,7 @@ const services = [
   },
   {
     title: "Animation & Video Editing",
-    link: "/Services/animation-video-editing",
+    link: "/animation-video-editing",
     features: [
       {
         name: "2D Animation",
@@ -223,7 +224,7 @@ const services = [
   },
   {
     title: "Search Engine Optimization",
-    link: "/Services/search-engine-optimization",
+    link: "/search-engine-optimization",
     features: [
       {
         name: "CMS development using WordPress, Shopify, and Wix",
@@ -256,7 +257,7 @@ const resources = [
   },
   {
     title: "Careers",
-    to: "/Career",
+    to: "/careers",
     windowScrollAmount: 200,
   },
   {
@@ -273,47 +274,47 @@ const resources = [
 const index = [
   {
     title: "SEO Company INDIA",
-    to: "/SEO/India",
+    to: "/seo-company-india",
     windowScrollAmount: 100,
   },
   {
     title: "SEO Company Jaipur",
-    to: "/SEO/Jaipur",
+    to: "/seo-company-in-jaipur",
     windowScrollAmount: 200,
   },
   {
     title: "SEO Company Delhi",
-    to: "/SEO/Delhi",
+    to: "/seo-company-in-delhi",
     windowScrollAmount: 300,
   },
   {
     title: "SEO Company Bangalore",
-    to: "/SEO/Bangalore",
+    to: "/seo-company-in-bangalore",
     windowScrollAmount: 400,
   },
   {
     title: "SEO Company Gurgaon",
-    to: "/SEO/Gurgaon",
+    to: "/seo-company-in-gurgaon",
     windowScrollAmount: 500,
   },
   {
     title: "SEO Company Mumbai",
-    to: "/SEO/Mumbai",
+    to: "/seo-company-in-mumbai",
     windowScrollAmount: 600,
   },
   {
     title: "SEO Company Noida",
-    to: "/SEO/Noida",
+    to: "/seo-company-in-noida",
     windowScrollAmount: 700,
   },
   {
     title: "SEO Company Pune",
-    to: "/SEO/Pune",
+    to: "/seo-company-in-pune",
     windowScrollAmount: 800,
   },
   {
     title: "SEO Company Surat",
-    to: "/SEO/Surat",
+    to: "/seo-company-in-surat",
     windowScrollAmount: 900,
   },
 ];
@@ -418,12 +419,12 @@ const Nav = () => {
                       alignItems={"center"}
                     >
                       <Typography
-                        fontsize={"12px"}
                         color={"white"}
                         alignSelf="center"
                         display="inline-block"
                         className="navlink"
                         height={"100%"}
+                        fontSize={"18px"}
                         sx={{
                           transition: "all 0.4s ease-in",
                           "&:hover": {
@@ -463,7 +464,7 @@ const Nav = () => {
                       position: "absolute",
                       backgroundColor: "transparent",
                       left: 0,
-                      top: "100%",
+                      top: "92%",
                       zIndex: 1,
                     }}
                   >
@@ -652,7 +653,7 @@ const Nav = () => {
                       <Typography
                         alignSelf="center"
                         display="inline-block"
-                        fontsize={"12px"}
+                        fontSize={"18px"}
                         color={"white"}
                         sx={{
                           transition: "all 0.4s ease-in",
@@ -681,7 +682,7 @@ const Nav = () => {
                       <Typography
                         alignSelf="center"
                         display="inline-block"
-                        fontsize={"12px"}
+                        fontSize={"18px"}
                         color={"white"}
                         sx={{
                           transition: "all 0.4s ease-in",
@@ -712,7 +713,7 @@ const Nav = () => {
                       <Typography
                         alignSelf="center"
                         display="inline-block"
-                        fontsize={"12px"}
+                        fontSize={"18px"}
                         color={"white"}
                         sx={{
                           transition: "all 0.4s ease-in",
@@ -746,7 +747,7 @@ const Nav = () => {
                       <Typography
                         alignSelf="center"
                         display="inline-block"
-                        fontsize={"12px"}
+                        fontSize={"18px"}
                         color={"white"}
                         sx={{
                           transition: "all 0.4s ease-in",
