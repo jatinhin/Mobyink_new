@@ -2,7 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "../../../../utils/Navbar/Nav";
-import careerPageImg from "../../../../assests/careerPageImg.webp";
+import careerPageImg from "../../../../assests/Career-Banner-01.svg";
 
 const TabLineSection = () => {
   return (
@@ -19,9 +19,15 @@ const TabLineSection = () => {
         <Nav />
         <Stack zIndex={1}>
           <Stack
-            margin={"0 110px"}
+            margin={{
+              xs: "0 auto",
+              lg: "0 110px",
+            }}
             ml={20}
-            width={"40%"}
+            width={{
+              xs: "90%",
+              lg: "40%",
+            }}
             height={"90vh"}
             gap={3}
             justifyContent={"center"}

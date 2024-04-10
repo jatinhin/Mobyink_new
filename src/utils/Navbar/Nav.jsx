@@ -3,6 +3,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import lo from "../../assests/LogoBlue.svg";
+import logoDarkImg from "../../assests/logo_dark.svg";
 import { Stack } from "@mui/material";
 import "./nav.css";
 import Button from "../Button";
@@ -15,7 +16,6 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const services = [
   {
-
     link: "/Services/App-Marketing",
 
     title: "App Marketing",
@@ -359,15 +359,12 @@ const Nav = () => {
     <>
       {/* for Desktop view */}
 
-
       <Stack
         position={"relative"}
         p={"0px 90px"}
         zIndex={5}
         backgroundColor={"transparent"}
       >
-
-
         <Stack
           mt={1}
           height={"80px"}
@@ -565,10 +562,21 @@ const Nav = () => {
                             Featured Case Studies
                           </Typography>
                           <Stack>
-                            <Typography>
-                              Segmenting Your Customers for Greater Digital
-                              Marketing
-                            </Typography>
+                            <Link
+                              onClick={() => {
+                                window.scroll(0, 0);
+                              }}
+                              to="/Blogs/1"
+                              style={{
+                                textDecoration: "none",
+                                color: "black",
+                              }}
+                            >
+                              <Typography>
+                                Segmenting Your Customers for Greater Digital
+                                Marketing
+                              </Typography>
+                            </Link>
                             <Box
                               mt={1}
                               width={"100%"}
@@ -577,9 +585,20 @@ const Nav = () => {
                             />
                           </Stack>
                           <Stack>
-                            <Typography>
-                              How to Improve Your Site SEO Rankings
-                            </Typography>
+                            <Link
+                              onClick={() => {
+                                window.scroll(0, 0);
+                              }}
+                              to="/Blogs/2"
+                              style={{
+                                textDecoration: "none",
+                                color: "black",
+                              }}
+                            >
+                              <Typography>
+                                How to Improve Your Site SEO Rankings
+                              </Typography>
+                            </Link>
                             <Box
                               mt={1}
                               width={"100%"}
@@ -588,10 +607,21 @@ const Nav = () => {
                             />
                           </Stack>
                           <Stack>
-                            <Typography>
-                              How to Secure and Optimize Your App’s Online
-                              Visibility
-                            </Typography>
+                            <Link
+                              onClick={() => {
+                                window.scroll(0, 0);
+                              }}
+                              to="/Blogs/3"
+                              style={{
+                                textDecoration: "none",
+                                color: "black",
+                              }}
+                            >
+                              <Typography>
+                                How to Secure and Optimize Your App’s Online
+                                Visibility
+                              </Typography>
+                            </Link>
                             <Box
                               mt={1}
                               width={"100%"}
@@ -743,11 +773,11 @@ const Nav = () => {
 
                   <Stack
                     flexDirection={"row"}
-                    justifyContent={"center"}
-                    alignItems={"center"}
+                    justifyContent={"start"}
+                    alignItems={"start"}
                     backgroundColor={"transparent"}
                     sx={{
-                      height: isPopoverOpen(4) ? 400 : 0,
+                      height: isPopoverOpen(4) ? 470 : 0,
                       opacity: isPopoverOpen(4) ? 1 : 0,
                       transition:
                         "height 0.2s ease-in, opacity 0.2s ease-in-out",
@@ -757,8 +787,12 @@ const Nav = () => {
                       left: 0,
                     }}
                   >
-                    <Stack width={"400px"} position={"relative"}>
-                      <Stack width={"200px"} backgroundColor={"#F4F4F4"}>
+                    <Stack width={"420px"} position={"relative"}>
+                      <Stack
+                        width={"200px"}
+                        backgroundColor={"#F4F4F4"}
+                        boxShadow={"0 10px 30px 0 rgba(45,45,45,.2)"}
+                      >
                         <Link to="#" style={{ textDecoration: "none" }}>
                           <Stack
                             onMouseEnter={() => handleMouseEnter(5)}
@@ -766,7 +800,7 @@ const Nav = () => {
                           >
                             <Typography
                               color={"black"}
-                              padding={"20px"}
+                              padding={"10px 20px"}
                               mt={"10px"}
                               position={"relative"}
                               sx={{
@@ -775,6 +809,7 @@ const Nav = () => {
                                   backgroundColor: "white",
                                 },
                               }}
+                              fontSize={"14px"}
                             >
                               Index
                               <KeyboardArrowDownIcon
@@ -789,14 +824,15 @@ const Nav = () => {
                           <Stack
                             flexDirection={"row"}
                             justifyContent={"center"}
-                            alignItems={"center"}
+                            alignItems={"start"}
                             onMouseEnter={() => handleMouseEnter(5)}
                             onMouseLeave={() => handleMouseLeave(5)}
                             backgroundColor={"#F4F4F4"}
+                            boxShadow={"0 10px 30px 0 rgba(45,45,45,.2)"}
                             sx={{
                               // height: isPopoverOpen(5) ? 400 : 0,
-                              height: isPopoverOpen(5) ? "300px" : 0,
-                              width: isPopoverOpen(5) ? 200 : 0,
+                              height: isPopoverOpen(5) ? "700px" : 0,
+                              width: isPopoverOpen(5) ? 220 : 0,
                               opacity: isPopoverOpen(5) ? 1 : 0,
                               // boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.1)",
                               transition:
@@ -816,8 +852,9 @@ const Nav = () => {
                                   style={{ textDecoration: "none" }}
                                 >
                                   <Typography
+                                    fontSize={"14px"}
                                     color={"black"}
-                                    padding={"20px"}
+                                    padding={"10px 20px"}
                                     mt={"10px"}
                                     sx={{
                                       "&:hover": {
@@ -840,8 +877,9 @@ const Nav = () => {
                             style={{ textDecoration: "none" }}
                           >
                             <Typography
+                              fontSize={"14px"}
                               color={"black"}
-                              padding={"20px"}
+                              padding={"10px 20px"}
                               mt={"10px"}
                               sx={{
                                 "&:hover": {
@@ -927,7 +965,7 @@ const Nav = () => {
             }}
           >
             {menuClick ? (
-              <RxCross2
+              <CgMenuRight
                 style={{ color: "white", width: "32px", height: "32px" }}
               />
             ) : (
@@ -945,7 +983,6 @@ const Nav = () => {
           position={"fixed"}
           overflow={"auto"}
           sx={{
-            top: 80,
             // bottom: 0,
             left: menuClick ? "0" : "-100%",
             // right: menuClick ? "0" : "-100%",
@@ -955,6 +992,51 @@ const Nav = () => {
             zIndex: "1000001",
           }}
         >
+          <Stack width={"100%"} bgcolor={"#0D6EFD"}>
+            <Stack
+              width={"90%"}
+              direction={"row"}
+              alignSelf={"center"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              padding={"20px 0px"}
+            >
+              <Stack width={{ xs: "45%", md: "30%" }}>
+                <Link to={"/"}>
+                  <img
+                    src={logoDarkImg}
+                    alt=""
+                    width={"100%"}
+                    height={"100%"}
+                  />
+                </Link>
+              </Stack>
+              <Stack
+                onClick={handleClick}
+                width={"32px"}
+                height={"32px"}
+                sx={{
+                  display: {
+                    xs: "block",
+                    lg: "none",
+                  },
+                  "&:hover": {
+                    cursor: "pointer",
+                  },
+                }}
+              >
+                {menuClick ? (
+                  <RxCross2
+                    style={{ color: "white", width: "32px", height: "32px" }}
+                  />
+                ) : (
+                  <CgMenuRight
+                    style={{ color: "white", width: "32px", height: "32px" }}
+                  />
+                )}
+              </Stack>
+            </Stack>
+          </Stack>
           <Accordion
             disableGutters
             sx={{
@@ -1099,6 +1181,7 @@ const Nav = () => {
               </Typography>
             </AccordionSummary>
           </Accordion>
+
           <Accordion
             disableGutters
             sx={{
@@ -1125,7 +1208,7 @@ const Nav = () => {
                         transition: "all 0.4s ease-in",
                       }}
                     >
-                      Services
+                      Resources
                     </Typography>
                   </Box>
                 </Link>
@@ -1200,6 +1283,7 @@ const Nav = () => {
               </Stack>
             </AccordionDetails>
           </Accordion>
+
           <Stack alignItems={"center"} margin={"10px auto"}>
             <Link to={"#"}>
               <Button

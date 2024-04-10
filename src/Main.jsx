@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router";
 
 import Home from "./components/Home/Home";
 
-
 import AnnimationVideoEditing from "./components/Services/AnimationVideoEditing/AnimationVideoEditing";
 import AppDevlopment from "./components/Services/AppDevelopment/AppDevelopment";
 import AppMarketing from "./components/Services/AppMarketing/AppMarketing";
@@ -14,9 +13,12 @@ import SocialMediaManagement from "./components/Services/SocialMediaManagement/S
 import UiUxDesignPrototype from "./components/Services/UiUxDesignPrototype/UiUxDesignPrototype";
 import WebsiteDevelopment from "./components/Services/WebsiteDevelopment/WebsiteDevelopment";
 
-
 import AboutUs from "./components/AboutUs/AboutUs";
 import Industries from "./components/Industries/Industries";
+import RealEstate from "./components/Industries/RealEstate/RealEstate";
+import ItAndHealthcare from "./components/Industries/ItAndHealthcare/ItAndHealthcare";
+import Finance from "./components/Industries/Finance/Finance";
+import Others from "./components/Industries/Others/Others";
 import Portfolio from "./components/Resources/Portfolio/Portfolio";
 import CaseStudies from "./components/CaseStudy/CaseStudies";
 
@@ -36,6 +38,9 @@ import SeoInMumbai from "./components/Resources/Index/SeoInMumbai/SeoInMumbai";
 import SeoInPune from "./components/Resources/Index/SeoInPune/SeoInPune";
 import SeoInSurat from "./components/Resources/Index/SeoInSurat/SeoInSurat";
 
+import FaQ from "./components/Resources/FaQ/FaQ";
+import Ecomerce from "./components/Industries/Ecomerce/Ecomerce";
+import Logistics from "./components/Industries/Logistics/Logistics";
 
 const Main = () => {
   return (
@@ -89,9 +94,19 @@ const Main = () => {
           element={<WebsiteDevelopment />}
         />
 
-
         <Route exact path="/about-us" element={<AboutUs />} />
         <Route exact path="/industries" element={<Industries />} />
+        <Route exact path="/industries/ecomerce" element={<Ecomerce />} />
+        <Route exact path="/industries/real-estate" element={<RealEstate />} />
+        <Route
+          exact
+          path="/industries/it-healthcare"
+          element={<ItAndHealthcare />}
+        />
+        <Route exact path="/industries/logistics" element={<Logistics />} />
+        <Route exact path="/industries/finance" element={<Finance />} />
+        <Route exact path="/industries/others" element={<Others />} />
+
         <Route exact path="/case-studies" element={<CaseStudies />} />
         <Route
           exact
@@ -113,14 +128,14 @@ const Main = () => {
 
         <Route exact path="/Career" element={<Career />} />
         <Route exact path="/Blog" element={<Blogs />} />
-        <Route exact path="/Blog/:id" element={<BlogsInnerPage />} />
+        <Route exact path="/Blogs/:id" element={<BlogsInnerPage />} />
+        <Route exact path="/FAQ" element={<FaQ />} />
         <Route
           exact
           path="/Services/app-marketing"
           element={<AppMarketing />}
         />
         <Route exact path="/dummy" element={<ScrollingSection />} />
-
       </Routes>
     </>
   );
