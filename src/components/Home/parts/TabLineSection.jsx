@@ -56,7 +56,10 @@ const TabLineSection = () => {
               lg: "60%",
               sm: "80%",
             }}
-            height={"90vh"}
+            height={{
+              xs: "70vh",
+              lg: "90vh",
+            }}
             gap={3}
             justifyContent={"center"}
           >
