@@ -18,7 +18,7 @@ const footerData1 = [
     title: "HQ INDIA",
     address:
       "Above HDFC bank, opposite Nelam Multi Specialty Hospital, Sheer Sagar, Patrakar Colony, Jaipur",
-    img: canadaImg,
+    img: indiaHqImg,
   },
   {
     title: "CANADA",
@@ -28,25 +28,25 @@ const footerData1 = [
   {
     title: "DUBAI",
     address: "Dubai ,Bur Dubai, Shamma JUMA building office number 105 ,UAE",
-    img: canadaImg,
+    img: dubaiImg,
   },
   {
     title: "USA",
     address: "New Jersey, United States of America",
-    img: canadaImg,
+    img: usaImg,
   },
 ];
 
 const services = [
   { text: "Services", to: "#" },
-  { text: "UI/UX Design", to: "/Services/ui-ux-design-prototype" },
+  { text: "UI/UX Design", to: "/ui-ux-design-prototype" },
   {
     text: "Search Engine Optimization",
-    to: "/Services/search-engine-optimization",
+    to: "/search-engine-optimization",
   },
-  { text: "App Marketing", to: "/Services/App-Marketing" },
-  { text: "Website Development", to: "/Services/website-development" },
-  { text: "Social Media Management", to: "/Services/social-media-management" },
+  { text: "App Marketing", to: "/App-Marketing" },
+  { text: "Website Development", to: "/website-development" },
+  { text: "Social Media Management", to: "/social-media-management" },
   { text: "More......", to: "#" },
 ];
 
@@ -62,15 +62,15 @@ const technologies = [
 
 const industries = [
   { text: "Industries", to: "#" },
-  { text: "E-commerce", to: "/industries/ecomerce" },
-  { text: "Logistics and Immigration", to: "/industries/logistics" },
-  { text: "IT and Healthcare", to: "/industries/it-healthcare" },
+  { text: "E-commerce", to: "/e-commerce" },
+  { text: "Logistics and Immigration", to: "/logistics-and-immigration" },
+  { text: "IT and Healthcare", to: "/it-and-healthcare" },
   {
     text: "Real Estate and Interior Designing",
-    to: "/industries/real-estate",
+    to: "/real-estate-and-interior-designing",
   },
-  { text: "Finance", to: "/industries/finance" },
-  { text: "More......", to: "/industries/others" },
+  { text: "Finance", to: "/finance" },
+  { text: "More......", to: "/others" },
 ];
 
 const portfolio = [
@@ -140,12 +140,14 @@ const Footer = () => {
             >
               <Stack p={1} width={"80%"} m={"0 auto"} boxSizing={"border-box"}>
                 <Box
+                  margin={"0 auto"}
                   color={"black"}
                   component="img"
-                  width={"100%"}
-                  height={"100%"}
+                  width={"160px"}
+                  height={"110px"}
                   src={item.img}
                   alt={item.title}
+                  style={{ filter: "grayscale(100%)" }}
                 />
               </Stack>
               <Typography textAlign={"center"} fontSize={"23px"}>
