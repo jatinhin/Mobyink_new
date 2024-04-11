@@ -16,7 +16,6 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const services = [
   {
-
     link: "/app-marketing",
 
     title: "App Marketing",
@@ -262,7 +261,7 @@ const resources = [
   },
   {
     title: "Blog",
-    to: "/Blog",
+    to: "/blog",
     windowScrollAmount: 300,
   },
   {
@@ -342,6 +341,30 @@ const Nav = () => {
     };
   }, [menuClick]);
 
+  const [showNavbar, setShowNavbar] = useState(false);
+  const [prevScrollPosition, setPrevScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPosition = window.scrollY;
+      if (
+        currentScrollPosition > 1000 &&
+        currentScrollPosition < prevScrollPosition
+      ) {
+        setShowNavbar(true);
+      } else {
+        setShowNavbar(false);
+      }
+      setPrevScrollPosition(currentScrollPosition);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPosition]);
+
   const handleMouseEnter = (linkId) => {
     setPopoverState((prevState) => ({
       ...prevState,
@@ -382,7 +405,12 @@ const Nav = () => {
           backgroundColor={"transparent"}
         >
           <Stack width={{ xxl: "10%", xl: "13%", md: "20%", sm: "25%" }}>
-            <Link to={"/"}>
+            <Link
+              to={"/"}
+              onClick={() => {
+                window.scroll(0, 0);
+              }}
+            >
               <img src={lo} alt="" style={{ width: "100%", height: "100%" }} />
             </Link>
           </Stack>
@@ -567,7 +595,7 @@ const Nav = () => {
                               onClick={() => {
                                 window.scroll(0, 0);
                               }}
-                              to="/Blogs/1"
+                              to="/segmenting-your-customers-for-greater-digital-marketing-success"
                               style={{
                                 textDecoration: "none",
                                 color: "black",
@@ -590,7 +618,7 @@ const Nav = () => {
                               onClick={() => {
                                 window.scroll(0, 0);
                               }}
-                              to="/Blogs/2"
+                              to="/how-to-improve-your-site-seo-rankings"
                               style={{
                                 textDecoration: "none",
                                 color: "black",
@@ -612,7 +640,7 @@ const Nav = () => {
                               onClick={() => {
                                 window.scroll(0, 0);
                               }}
-                              to="/Blogs/3"
+                              to="/how-to-secure-and-optimize-your-apps-online-visibility"
                               style={{
                                 textDecoration: "none",
                                 color: "black",
@@ -901,9 +929,12 @@ const Nav = () => {
             </Stack>
           </Stack>
           <Link
-            to="#"
+            to="/get-in-touch"
             style={{
               textDecoration: "none",
+            }}
+            onClick={() => {
+              window.scrollTo(0, 0);
             }}
           >
             <Stack
@@ -925,6 +956,627 @@ const Nav = () => {
         </Stack>
       </Stack>
 
+      {/* when desktop is scroll downward then the navbar should be fixed at the top of the page and the background color should be white and the text color should be black */}
+      {showNavbar && (
+        <Stack
+          position={"fixed"}
+          p={"0px 90px"}
+          left={0}
+          right={0}
+          zIndex={5}
+          backgroundColor={"#0D6EFD"}
+          top={0}
+          transition={"all 0.3s ease-in-out"} // Apply transition here
+        >
+          <Stack
+            mt={1}
+            height={"60px"}
+            zIndex={11}
+            sx={{
+              display: {
+                xs: "none",
+                lg: "flex",
+              },
+            }}
+            direction={"row"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            backgroundColor={"transparent"}
+          >
+            <Stack width={{ xxl: "10%", xl: "13%", md: "20%", sm: "25%" }}>
+              <Link to={"/"}>
+                <img
+                  src={logoDarkImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </Link>
+            </Stack>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              alignSelf={"center"}
+              height={"100%"}
+            >
+              <Stack
+                direction="row"
+                justifyContent="space-evenly"
+                alignContent="center"
+                gap={5}
+                pl={3}
+                sx={{ color: "white", height: "100%", paddingRight: 4 }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    height: "100%",
+                  }}
+                  onMouseEnter={() => handleMouseEnter(1)}
+                  onMouseLeave={() => handleMouseLeave(1)}
+                  className="navlink-box"
+                >
+                  <Box>
+                    <Link to="#" className="navlink-link">
+                      <Box
+                        display={"flex"}
+                        justifyContent="center"
+                        alignItems={"center"}
+                        onClick={() => {
+                          window.scroll(0, 0);
+                        }}
+                      >
+                        <Typography
+                          color={"white"}
+                          alignSelf="center"
+                          display="inline-block"
+                          className="navlink"
+                          height={"100%"}
+                          fontSize={"18px"}
+                          sx={{
+                            transition: "all 0.4s ease-in",
+                            "&:hover": {
+                              color: "#0D6EFD",
+                            },
+                            //   color: isPopoverOpen(1) ? "white" : "black",
+                          }}
+                        >
+                          Services
+                        </Typography>
+                        <ArrowDropDownIcon
+                          className="navlink-link-downarrow"
+                          sx={{
+                            fontSize: 25,
+                            transition: "all 0.3s ease-in",
+                            color: "white",
+                            transform: isPopoverOpen(1)
+                              ? "rotate(180deg)"
+                              : "rotate(0)",
+                          }}
+                        />
+                      </Box>
+                    </Link>
+                    <Stack
+                      color={"black"}
+                      flexDirection={"row"}
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      onMouseEnter={() => handleMouseEnter(1)}
+                      onMouseLeave={() => handleMouseLeave(1)}
+                      sx={{
+                        width: isPopoverOpen(1) ? "100%" : 0,
+                        opacity: isPopoverOpen(1) ? 1 : 0,
+                        transition:
+                          "height 0.2s ease-in, opacity 0.2s ease-in-out",
+                        overflow: "hidden",
+                        position: "absolute",
+                        backgroundColor: "transparent",
+                        left: 0,
+                        top: "92%",
+                        zIndex: 1,
+                      }}
+                    >
+                      <Stack direction={"row"} width={"100%"}>
+                        <Stack
+                          color={"lightpurple"}
+                          width={"75%"}
+                          backgroundColor={"#DEE0FE"}
+                          alignItems={"center"}
+                        >
+                          <Stack
+                            direction={"row"}
+                            gap={3}
+                            justifyContent={"center"}
+                          >
+                            <Stack width={"25%"} pl={"5%"} pb={3}>
+                              <Typography pt={3} pb={1} fontWeight={"bold"}>
+                                Solutions
+                              </Typography>
+                              <Stack>
+                                {services.map((service, index) => (
+                                  <Link
+                                    to={service.link}
+                                    style={{
+                                      textDecoration: "none",
+                                      color: "black",
+                                    }}
+                                    onClick={() => {
+                                      window.scroll(0, 0);
+                                    }}
+                                  >
+                                    <Typography
+                                      pt={1}
+                                      pb={1}
+                                      key={index}
+                                      sx={{
+                                        "&:hover": {
+                                          color: "#0D6EFD",
+                                          cursor: "pointer",
+                                        },
+                                      }}
+                                      onMouseEnter={() =>
+                                        setHoveredTitle(service.title)
+                                      }
+                                    >
+                                      {service.title}
+                                    </Typography>
+                                  </Link>
+                                ))}
+                              </Stack>
+                            </Stack>
+                            <Stack width={"50%"}>
+                              <Typography pt={3} fontWeight={"bold"}>
+                                Industry Focus
+                              </Typography>
+                              <Stack
+                                direction={"row"}
+                                flexWrap={"wrap"}
+                                justifyContent={"center"}
+                                gap={3}
+                                p={4}
+                                height={"100%"}
+                              >
+                                {/* Render features based on hoveredTitle */}
+                                {hoveredTitle &&
+                                  services
+                                    .find(
+                                      (service) =>
+                                        service.title === hoveredTitle
+                                    )
+                                    ?.features.map((feature, index) => (
+                                      <Stack
+                                        key={index}
+                                        width={"170px"}
+                                        height={"100px"}
+                                        p={2}
+                                        alignItems={"center"}
+                                        justifyContent={"center"}
+                                        borderRadius={3}
+                                        backgroundColor={"white"}
+                                        border={"2px solid gray"}
+                                      >
+                                        <Typography textAlign={"center"}>
+                                          {feature.name}
+                                        </Typography>
+                                      </Stack>
+                                    ))}
+                              </Stack>
+                            </Stack>
+                          </Stack>
+                        </Stack>
+                        <Stack width={"25%"} bgcolor={"white"}>
+                          <Stack
+                            p={3}
+                            boxSizing={"border-box"}
+                            gap={3}
+                            width={"80%"}
+                          >
+                            <Typography fontWeight={"bold"}>
+                              Featured Case Studies
+                            </Typography>
+                            <Stack>
+                              <Link
+                                onClick={() => {
+                                  window.scroll(0, 0);
+                                }}
+                                to="/segmenting-your-customers-for-greater-digital-marketing-success"
+                                style={{
+                                  textDecoration: "none",
+                                  color: "black",
+                                }}
+                              >
+                                <Typography>
+                                  Segmenting Your Customers for Greater Digital
+                                  Marketing
+                                </Typography>
+                              </Link>
+                              <Box
+                                mt={1}
+                                width={"100%"}
+                                height={"1px"}
+                                backgroundColor={"lightgray"}
+                              />
+                            </Stack>
+                            <Stack>
+                              <Link
+                                onClick={() => {
+                                  window.scroll(0, 0);
+                                }}
+                                to="/how-to-improve-your-site-seo-rankings"
+                                style={{
+                                  textDecoration: "none",
+                                  color: "black",
+                                }}
+                              >
+                                <Typography>
+                                  How to Improve Your Site SEO Rankings
+                                </Typography>
+                              </Link>
+                              <Box
+                                mt={1}
+                                width={"100%"}
+                                height={"1px"}
+                                backgroundColor={"lightgray"}
+                              />
+                            </Stack>
+                            <Stack>
+                              <Link
+                                onClick={() => {
+                                  window.scroll(0, 0);
+                                }}
+                                to="/how-to-secure-and-optimize-your-apps-online-visibility"
+                                style={{
+                                  textDecoration: "none",
+                                  color: "black",
+                                }}
+                              >
+                                <Typography>
+                                  How to Secure and Optimize Your App’s Online
+                                  Visibility
+                                </Typography>
+                              </Link>
+                              <Box
+                                mt={1}
+                                width={"100%"}
+                                height={"1px"}
+                                backgroundColor={"lightgray"}
+                              />
+                            </Stack>
+                          </Stack>
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  </Box>
+                </div>
+                {/* //!our Story */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Box>
+                    <Link
+                      to="/about-us"
+                      className="navlink-link"
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                    >
+                      <Box
+                        display={"flex"}
+                        justifyContent="center"
+                        alignItems={"center"}
+                      >
+                        <Typography
+                          alignSelf="center"
+                          display="inline-block"
+                          fontSize={"18px"}
+                          color={"white"}
+                          sx={{
+                            transition: "all 0.4s ease-in",
+                            "&:hover": {
+                              color: "#0D6EFD",
+                            },
+                            //   color: isPopoverOpen(2) ? "white" : "black",
+                          }}
+                        >
+                          About Us
+                        </Typography>
+                      </Box>
+                    </Link>
+                  </Box>
+                </div>
+
+                {/* //!Industries */}
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Box>
+                    <Link
+                      to="/industries"
+                      className="navlink-link"
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                    >
+                      <Box
+                        display={"flex"}
+                        justifyContent="center"
+                        alignItems={"center"}
+                      >
+                        <Typography
+                          alignSelf="center"
+                          display="inline-block"
+                          fontSize={"18px"}
+                          color={"white"}
+                          sx={{
+                            transition: "all 0.4s ease-in",
+                            "&:hover": {
+                              color: "#0D6EFD",
+                            },
+                            //   color: isPopoverOpen(3) ? "white" : "black",
+                          }}
+                        >
+                          Industries
+                        </Typography>
+                      </Box>
+                    </Link>
+                  </Box>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      position: "relative",
+                    }}
+                  >
+                    <Link
+                      to="/case-studies"
+                      className="navlink-link"
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                    >
+                      <Box
+                        display={"flex"}
+                        justifyContent="center"
+                        alignItems={"center"}
+                      >
+                        <Typography
+                          alignSelf="center"
+                          display="inline-block"
+                          fontSize={"18px"}
+                          color={"white"}
+                          sx={{
+                            transition: "all 0.4s ease-in",
+                            "&:hover": {
+                              color: "#0D6EFD",
+                            },
+                          }}
+                        >
+                          Case Studies
+                        </Typography>
+                      </Box>
+                    </Link>
+                  </Box>
+                </div>
+                <div
+                  style={{ display: "flex", alignItems: "center" }}
+                  onMouseEnter={() => handleMouseEnter(4)}
+                  onMouseLeave={() => handleMouseLeave(4)}
+                >
+                  <Box
+                    sx={{
+                      position: "relative",
+                    }}
+                  >
+                    <Link
+                      to="#"
+                      className="navlink-link"
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                    >
+                      <Box
+                        display={"flex"}
+                        justifyContent="center"
+                        alignItems={"center"}
+                      >
+                        <Typography
+                          alignSelf="center"
+                          display="inline-block"
+                          fontSize={"18px"}
+                          color={"white"}
+                          sx={{
+                            transition: "all 0.4s ease-in",
+                            "&:hover": {
+                              color: "#0D6EFD",
+                            },
+                          }}
+                        >
+                          Resources
+                        </Typography>
+                        <ArrowDropDownIcon
+                          className="navlink-link-downarrow"
+                          sx={{
+                            fontSize: 25,
+                            transition: "all 0.3s ease-in",
+                            color: "white",
+                            transform: isPopoverOpen(4)
+                              ? "rotate(180deg)"
+                              : "rotate(0)",
+                          }}
+                        />
+                      </Box>
+                    </Link>
+
+                    <Stack
+                      flexDirection={"row"}
+                      justifyContent={"start"}
+                      alignItems={"start"}
+                      backgroundColor={"transparent"}
+                      sx={{
+                        height: isPopoverOpen(4) ? 470 : 0,
+                        opacity: isPopoverOpen(4) ? 1 : 0,
+                        transition:
+                          "height 0.2s ease-in, opacity 0.2s ease-in-out",
+                        position: "absolute",
+                        overflow: "hidden",
+                        zIndex: 1,
+                        left: 0,
+                      }}
+                    >
+                      <Stack width={"420px"} position={"relative"}>
+                        <Stack
+                          width={"200px"}
+                          backgroundColor={"#F4F4F4"}
+                          boxShadow={"0 10px 30px 0 rgba(45,45,45,.2)"}
+                        >
+                          <Link
+                            to="#"
+                            style={{ textDecoration: "none" }}
+                            onClick={() => {
+                              window.scroll(0, 0);
+                            }}
+                          >
+                            <Stack
+                              onMouseEnter={() => handleMouseEnter(5)}
+                              onMouseLeave={() => handleMouseLeave(5)}
+                            >
+                              <Typography
+                                color={"black"}
+                                padding={"10px 20px"}
+                                mt={"10px"}
+                                position={"relative"}
+                                sx={{
+                                  "&:hover": {
+                                    cursor: "pointer",
+                                    backgroundColor: "white",
+                                  },
+                                }}
+                                fontSize={"14px"}
+                              >
+                                Index
+                                <KeyboardArrowDownIcon
+                                  style={{
+                                    position: "absolute",
+                                    right: "20px",
+                                  }}
+                                />
+                              </Typography>
+                            </Stack>
+
+                            <Stack
+                              flexDirection={"row"}
+                              justifyContent={"center"}
+                              alignItems={"start"}
+                              onMouseEnter={() => handleMouseEnter(5)}
+                              onMouseLeave={() => handleMouseLeave(5)}
+                              backgroundColor={"#F4F4F4"}
+                              boxShadow={"0 10px 30px 0 rgba(45,45,45,.2)"}
+                              sx={{
+                                // height: isPopoverOpen(5) ? 400 : 0,
+                                height: isPopoverOpen(5) ? "700px" : 0,
+                                width: isPopoverOpen(5) ? 220 : 0,
+                                opacity: isPopoverOpen(5) ? 1 : 0,
+                                // boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.1)",
+                                transition:
+                                  "height 0.2s ease-in, opacity 0.2s ease-in-out",
+                                position: "absolute",
+                                overflow: "hidden",
+                                zIndex: 1,
+                                right: 0,
+                                top: 0,
+                              }}
+                            >
+                              <Stack>
+                                {index.map((resource, index) => (
+                                  <Link
+                                    key={index}
+                                    to={resource.to}
+                                    style={{ textDecoration: "none" }}
+                                    onClick={() => {
+                                      window.scroll(0, 0);
+                                    }}
+                                  >
+                                    <Typography
+                                      fontSize={"14px"}
+                                      color={"black"}
+                                      padding={"10px 20px"}
+                                      mt={"10px"}
+                                      sx={{
+                                        "&:hover": {
+                                          cursor: "pointer",
+                                          backgroundColor: "white",
+                                        },
+                                      }}
+                                    >
+                                      {resource.title}
+                                    </Typography>
+                                  </Link>
+                                ))}
+                              </Stack>
+                            </Stack>
+                          </Link>
+                          {resources.map((resource, index) => (
+                            <Link
+                              key={index}
+                              to={resource.to}
+                              style={{ textDecoration: "none" }}
+                              onClick={() => {
+                                window.scroll(0, 0);
+                              }}
+                            >
+                              <Typography
+                                fontSize={"14px"}
+                                color={"black"}
+                                padding={"10px 20px"}
+                                mt={"10px"}
+                                sx={{
+                                  "&:hover": {
+                                    cursor: "pointer",
+                                    backgroundColor: "white",
+                                  },
+                                }}
+                              >
+                                {resource.title}
+                              </Typography>
+                            </Link>
+                          ))}
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  </Box>
+                </div>
+              </Stack>
+            </Stack>
+            <Link
+              to="/get-in-touch"
+              onClick={() => {
+                window.scroll(0, 0);
+              }}
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              <Stack
+                justifyContent={"center"}
+                alignItems={"center"}
+                width={"140px"}
+                height={"40px"}
+                border={"2px solid white"}
+                backgroundColor={"#0D6EFD"}
+                sx={{
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+              >
+                <Typography color={"white"}>Get In Touch</Typography>
+              </Stack>
+            </Link>
+          </Stack>
+        </Stack>
+      )}
       {/* for Mobile view */}
       <Stack
         m={"0 auto"}
@@ -947,7 +1599,12 @@ const Nav = () => {
           padding={"20px 0px"}
         >
           <Stack width={{ xs: "45%", md: "30%" }}>
-            <Link to={"/"}>
+            <Link
+              to={"/"}
+              onClick={() => {
+                window.scroll(0, 0);
+              }}
+            >
               <img src={lo} alt="" width={"100%"} height={"100%"} />
             </Link>
           </Stack>
@@ -1003,7 +1660,12 @@ const Nav = () => {
               padding={"20px 0px"}
             >
               <Stack width={{ xs: "45%", md: "30%" }}>
-                <Link to={"/"}>
+                <Link
+                  to={"/"}
+                  onClick={() => {
+                    window.scroll(0, 0);
+                  }}
+                >
                   <img
                     src={logoDarkImg}
                     alt=""
@@ -1048,7 +1710,13 @@ const Nav = () => {
             <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
               <Typography>
                 {" "}
-                <Link to="/" className="navlink-link">
+                <Link
+                  to="/"
+                  className="navlink-link"
+                  onClick={() => {
+                    window.scroll(0, 0);
+                  }}
+                >
                   <Box
                     display={"flex"}
                     justifyContent="center"
@@ -1073,7 +1741,13 @@ const Nav = () => {
               <Stack gap={1}>
                 {services.map((service, index) => (
                   <Stack justifyContent={"center"} gap={1} marginLeft={"20px"}>
-                    <Link to={service.link} className="popperLinks">
+                    <Link
+                      to={service.link}
+                      className="popperLinks"
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                    >
                       <Typography className="popperLinks" sx={{}}>
                         {service.title}
                       </Typography>
@@ -1094,7 +1768,13 @@ const Nav = () => {
             <AccordionSummary aria-controls="panel2-content" id="panel2-header">
               <Typography>
                 {" "}
-                <Link to="/about-us" className="navlink-link">
+                <Link
+                  to="/about-us"
+                  className="navlink-link"
+                  onClick={() => {
+                    window.scroll(0, 0);
+                  }}
+                >
                   <Box
                     display={"flex"}
                     justifyContent="center"
@@ -1127,7 +1807,13 @@ const Nav = () => {
             <AccordionSummary aria-controls="panel2-content" id="panel2-header">
               <Typography>
                 {" "}
-                <Link to="/industries" className="navlink-link">
+                <Link
+                  to="/industries"
+                  className="navlink-link"
+                  onClick={() => {
+                    window.scroll(0, 0);
+                  }}
+                >
                   <Box
                     display={"flex"}
                     justifyContent="center"
@@ -1160,7 +1846,13 @@ const Nav = () => {
             <AccordionSummary aria-controls="panel2-content" id="panel2-header">
               <Typography>
                 {" "}
-                <Link to="/case-studies" className="navlink-link">
+                <Link
+                  to="/case-studies"
+                  className="navlink-link"
+                  onClick={() => {
+                    window.scroll(0, 0);
+                  }}
+                >
                   <Box
                     display={"flex"}
                     justifyContent="center"
@@ -1194,7 +1886,13 @@ const Nav = () => {
             <AccordionSummary sx={{ mt: 0 }} expandIcon={<ArrowDropDownIcon />}>
               <Typography>
                 {" "}
-                <Link to="/" className="navlink-link">
+                <Link
+                  to="/"
+                  className="navlink-link"
+                  onClick={() => {
+                    window.scroll(0, 0);
+                  }}
+                >
                   <Box
                     display={"flex"}
                     justifyContent="center"
@@ -1233,7 +1931,13 @@ const Nav = () => {
                   >
                     <Typography>
                       {" "}
-                      <Link to="/" className="navlink-link">
+                      <Link
+                        to="/"
+                        className="navlink-link"
+                        onClick={() => {
+                          window.scroll(0, 0);
+                        }}
+                      >
                         <Box
                           display={"flex"}
                           justifyContent="center"
@@ -1262,7 +1966,13 @@ const Nav = () => {
                           gap={1}
                           marginLeft={"20px"}
                         >
-                          <Link to={service.to} className="popperLinks">
+                          <Link
+                            to={service.to}
+                            className="popperLinks"
+                            onClick={() => {
+                              window.scroll(0, 0);
+                            }}
+                          >
                             <Typography className="popperLinks" sx={{}}>
                               {service.title}
                             </Typography>
@@ -1274,7 +1984,13 @@ const Nav = () => {
                 </Accordion>
                 {resources.map((resource, index) => (
                   <Stack justifyContent={"center"} gap={1} marginLeft={"20px"}>
-                    <Link to={resource.to} className="popperLinks">
+                    <Link
+                      to={resource.to}
+                      className="popperLinks"
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                    >
                       <Typography className="popperLinks" sx={{}}>
                         {resource.title}
                       </Typography>
@@ -1286,7 +2002,12 @@ const Nav = () => {
           </Accordion>
 
           <Stack alignItems={"center"} margin={"10px auto"}>
-            <Link to={"#"}>
+            <Link
+              to={"/get-in-touch"}
+              onClick={() => {
+                window.scroll(0, 0);
+              }}
+            >
               <Button
                 sx={{
                   width: "120px",
