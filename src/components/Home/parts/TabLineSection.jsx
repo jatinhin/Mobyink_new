@@ -67,8 +67,9 @@ const TabLineSection = () => {
                 md: "left",
               }}
               fontSize={{
-                xxl: "48px",
-                xl: "36px",
+                xxl: "52px",
+                xl: "48px",
+                lg: "44px",
                 sm: "34px",
               }}
               fontWeight={"bold"}
@@ -83,9 +84,9 @@ const TabLineSection = () => {
                 md: "left",
               }}
               fontSize={{
-                xxl: "28px",
-                xl: "26px",
-                sm: "24px",
+                xxl: "26px",
+                xl: "24px",
+                sm: "20px",
               }}
               color={"white"}
             >
