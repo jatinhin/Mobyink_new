@@ -69,7 +69,7 @@ const TabLineSection = () => {
               fontSize={{
                 xxl: "48px",
                 xl: "36px",
-                sm: "24px",
+                sm: "34px",
               }}
               fontWeight={"bold"}
               color={"white"}
@@ -82,7 +82,11 @@ const TabLineSection = () => {
                 sm: "center",
                 md: "left",
               }}
-              variant="h6"
+              fontSize={{
+                xxl: "28px",
+                xl: "26px",
+                sm: "24px",
+              }}
               color={"white"}
             >
               Where advanced technology meets rapid innovation, transforming
