@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import lo from "../../assests/LogoBlue.svg";
 import logoDarkImg from "../../assests/logo_dark.svg";
@@ -13,10 +13,12 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import { RxCross2 } from "react-icons/rx";
 import { CgMenuRight } from "react-icons/cg";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
 
 const services = [
   {
-    link: "/app-marketing",
+    link: "/app-marketing/",
 
     title: "App Marketing",
     features: [
@@ -40,7 +42,7 @@ const services = [
   },
   {
     title: "App Development",
-    link: "/app-development",
+    link: "/app-development/",
     features: [
       {
         name: "iOS App Development Services",
@@ -55,7 +57,6 @@ const services = [
       {
         name: "Flutter App Development Services",
         to: "/Flutter App Development Services",
-        to: "/Flutter App Development Services",
         windowScrollAmount: 200,
       },
       {
@@ -67,7 +68,7 @@ const services = [
   },
   {
     title: "Graphic Designing",
-    link: "/graphic-designing",
+    link: "/graphic-designing/",
     features: [
       {
         name: "Banner Design and Logo Design",
@@ -93,7 +94,7 @@ const services = [
   },
   {
     title: "Website Development",
-    link: "/website-development",
+    link: "/website-development/",
     features: [
       {
         name: "CMS development using WordPress, Shopify, and Wix",
@@ -119,7 +120,7 @@ const services = [
   },
   {
     title: "Pay Per Click Advertising",
-    link: "/pay-per-click-advertising",
+    link: "/pay-per-click-advertising/",
     features: [
       {
         name: "Google Ads",
@@ -145,7 +146,7 @@ const services = [
   },
   {
     title: "UI/UX Design & Prototype",
-    link: "/ui-ux-design-prototype",
+    link: "/ui-ux-design-prototype/",
     features: [
       {
         name: "Custom Web Design",
@@ -171,7 +172,7 @@ const services = [
   },
   {
     title: "Social Media Management",
-    link: "/social-media-management",
+    link: "/social-media-management/",
     features: [
       {
         name: "Strategy with Content Creation",
@@ -197,7 +198,7 @@ const services = [
   },
   {
     title: "Animation & Video Editing",
-    link: "/animation-video-editing",
+    link: "/animation-video-editing/",
     features: [
       {
         name: "2D Animation",
@@ -223,7 +224,7 @@ const services = [
   },
   {
     title: "Search Engine Optimization",
-    link: "/search-engine-optimization",
+    link: "/search-engine-optimization/",
     features: [
       {
         name: "CMS development using WordPress, Shopify, and Wix",
@@ -251,73 +252,77 @@ const services = [
 const resources = [
   {
     title: "Portfolio",
-    to: "/portfolio",
+    to: "/portfolio/",
     windowScrollAmount: 100,
   },
   {
     title: "Careers",
-    to: "/careers",
+    to: "/careers/",
     windowScrollAmount: 200,
   },
   {
     title: "Blog",
-    to: "/blog",
+    to: "/blog/",
     windowScrollAmount: 300,
   },
   {
     title: "Faq",
-    to: "/Faq",
+    to: "/Faq/",
     windowScrollAmount: 400,
   },
 ];
 const index = [
   {
     title: "SEO Company INDIA",
-    to: "/seo-company-india",
+    to: "/seo-company-india/",
     windowScrollAmount: 100,
   },
   {
     title: "SEO Company Jaipur",
-    to: "/seo-company-in-jaipur",
+    to: "/seo-company-in-jaipur/",
     windowScrollAmount: 200,
   },
   {
     title: "SEO Company Delhi",
-    to: "/seo-company-in-delhi",
+    to: "/seo-company-in-delhi/",
     windowScrollAmount: 300,
   },
   {
     title: "SEO Company Bangalore",
-    to: "/seo-company-in-bangalore",
+    to: "/seo-company-in-bangalore/",
     windowScrollAmount: 400,
   },
   {
     title: "SEO Company Gurgaon",
-    to: "/seo-company-in-gurgaon",
+    to: "/seo-company-in-gurgaon/",
     windowScrollAmount: 500,
   },
   {
     title: "SEO Company Mumbai",
-    to: "/seo-company-in-mumbai",
+    to: "/seo-company-in-mumbai/",
     windowScrollAmount: 600,
   },
   {
     title: "SEO Company Noida",
-    to: "/seo-company-in-noida",
+    to: "/seo-company-in-noida/",
     windowScrollAmount: 700,
   },
   {
     title: "SEO Company Pune",
-    to: "/seo-company-in-pune",
+    to: "/seo-company-in-pune/",
     windowScrollAmount: 800,
   },
   {
     title: "SEO Company Surat",
-    to: "/seo-company-in-surat",
+    to: "/seo-company-in-surat/",
     windowScrollAmount: 900,
   },
 ];
 const Nav = () => {
+  const phoneNumber = "+91-9001386001";
+
+  const email = "info@mobyink.com";
+
   const [hoveredTitle, setHoveredTitle] = useState(null);
   useEffect(() => {
     setHoveredTitle(services[0]?.title);
@@ -595,7 +600,7 @@ const Nav = () => {
                               onClick={() => {
                                 window.scroll(0, 0);
                               }}
-                              to="/segmenting-your-customers-for-greater-digital-marketing-success"
+                              to="/segmenting-your-customers-for-greater-digital-marketing-success/"
                               style={{
                                 textDecoration: "none",
                                 color: "black",
@@ -618,7 +623,7 @@ const Nav = () => {
                               onClick={() => {
                                 window.scroll(0, 0);
                               }}
-                              to="/how-to-improve-your-site-seo-rankings"
+                              to="/how-to-improve-your-site-seo-rankings/"
                               style={{
                                 textDecoration: "none",
                                 color: "black",
@@ -640,7 +645,7 @@ const Nav = () => {
                               onClick={() => {
                                 window.scroll(0, 0);
                               }}
-                              to="/how-to-secure-and-optimize-your-apps-online-visibility"
+                              to="/how-to-secure-and-optimize-your-apps-online-visibility/"
                               style={{
                                 textDecoration: "none",
                                 color: "black",
@@ -672,7 +677,7 @@ const Nav = () => {
                 }}
               >
                 <Box>
-                  <Link to="/about-us" className="navlink-link">
+                  <Link to="/about-us/" className="navlink-link">
                     <Box
                       display={"flex"}
                       justifyContent="center"
@@ -701,7 +706,7 @@ const Nav = () => {
               {/* //!Industries */}
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Box>
-                  <Link to="/industries" className="navlink-link">
+                  <Link to="/industries/" className="navlink-link">
                     <Box
                       display={"flex"}
                       justifyContent="center"
@@ -732,7 +737,7 @@ const Nav = () => {
                     position: "relative",
                   }}
                 >
-                  <Link to="/case-studies" className="navlink-link">
+                  <Link to="/case-studies/" className="navlink-link">
                     <Box
                       display={"flex"}
                       justifyContent="center"
@@ -928,31 +933,88 @@ const Nav = () => {
               </div>
             </Stack>
           </Stack>
-          <Link
-            to="/get-in-touch"
-            style={{
-              textDecoration: "none",
-            }}
-            onClick={() => {
-              window.scrollTo(0, 0);
-            }}
-          >
-            <Stack
-              justifyContent={"center"}
-              alignItems={"center"}
-              width={"140px"}
-              height={"40px"}
-              border={"2px solid white"}
-              backgroundColor={"#0D6EFD"}
-              sx={{
-                "&:hover": {
-                  color: "white",
-                },
+          <Stack direction={"row"} gap={2}>
+            <Stack direction={"row"} gap={1}>
+              <Link
+                style={{
+                  textDecoration: "none",
+                }}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  window.location.href = `mailto:${email}?subject=${"Company Inquiry"}&body=${"Hello, I am interested in your services. Please contact me at this email addres "}`;
+                }}
+              >
+                <Stack
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  p={1.1}
+                  pt={1.5}
+                >
+                  <EmailIcon
+                    sx={{
+                      color: "white",
+                      "&:hover": {
+                        transform: "scale(1.3)", // Scale the icon
+                        transition: "all 0.3s ease", // Apply transition here
+                      },
+                    }}
+                  />
+                </Stack>
+              </Link>
+              <Link
+                style={{
+                  textDecoration: "none",
+                }}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+
+                  window.location.href = `tel:${phoneNumber}`;
+                }}
+              >
+                <Stack
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  p={1.1}
+                  pt={1.5}
+                >
+                  <PhoneIcon
+                    sx={{
+                      color: "white",
+                      "&:hover": {
+                        transform: "scale(1.3)", // Scale the icon
+                        transition: "all 0.3s ease", // Apply transition here
+                      },
+                    }}
+                  />
+                </Stack>
+              </Link>
+            </Stack>
+            <Link
+              to="/get-in-touch/"
+              style={{
+                textDecoration: "none",
+              }}
+              onClick={() => {
+                window.scrollTo(0, 0);
               }}
             >
-              <Typography color={"white"}>Get In Touch</Typography>
-            </Stack>
-          </Link>
+              <Stack
+                justifyContent={"center"}
+                alignItems={"center"}
+                width={"140px"}
+                height={"40px"}
+                border={"2px solid white"}
+                backgroundColor={"#0D6EFD"}
+                sx={{
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+              >
+                <Typography color={"white"}>Get In Touch</Typography>
+              </Stack>
+            </Link>
+          </Stack>
         </Stack>
       </Stack>
 
@@ -1203,7 +1265,7 @@ const Nav = () => {
                                 onClick={() => {
                                   window.scroll(0, 0);
                                 }}
-                                to="/how-to-improve-your-site-seo-rankings"
+                                to="/how-to-improve-your-site-seo-rankings/"
                                 style={{
                                   textDecoration: "none",
                                   color: "black",
@@ -1225,7 +1287,7 @@ const Nav = () => {
                                 onClick={() => {
                                   window.scroll(0, 0);
                                 }}
-                                to="/how-to-secure-and-optimize-your-apps-online-visibility"
+                                to="/how-to-secure-and-optimize-your-apps-online-visibility/"
                                 style={{
                                   textDecoration: "none",
                                   color: "black",
@@ -1258,7 +1320,7 @@ const Nav = () => {
                 >
                   <Box>
                     <Link
-                      to="/about-us"
+                      to="/about-us/"
                       className="navlink-link"
                       onClick={() => {
                         window.scroll(0, 0);
@@ -1293,7 +1355,7 @@ const Nav = () => {
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <Box>
                     <Link
-                      to="/industries"
+                      to="/industries/"
                       className="navlink-link"
                       onClick={() => {
                         window.scroll(0, 0);
@@ -1330,7 +1392,7 @@ const Nav = () => {
                     }}
                   >
                     <Link
-                      to="/case-studies"
+                      to="/case-studies/"
                       className="navlink-link"
                       onClick={() => {
                         window.scroll(0, 0);
@@ -1549,31 +1611,88 @@ const Nav = () => {
                 </div>
               </Stack>
             </Stack>
-            <Link
-              to="/get-in-touch"
-              onClick={() => {
-                window.scroll(0, 0);
-              }}
-              style={{
-                textDecoration: "none",
-              }}
-            >
-              <Stack
-                justifyContent={"center"}
-                alignItems={"center"}
-                width={"140px"}
-                height={"40px"}
-                border={"2px solid white"}
-                backgroundColor={"#0D6EFD"}
-                sx={{
-                  "&:hover": {
-                    color: "white",
-                  },
+            <Stack direction={"row"} gap={2}>
+              <Stack direction={"row"} gap={1}>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                  }}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    window.location.href = `mailto:${email}?subject=${"Company Inquiry"}&body=${"Hello, I am interested in your services. Please contact me at this email addres "}`;
+                  }}
+                >
+                  <Stack
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    p={1.1}
+                    pt={1.5}
+                  >
+                    <EmailIcon
+                      sx={{
+                        color: "white",
+                        "&:hover": {
+                          transform: "scale(1.3)", // Scale the icon
+                          transition: "all 0.3s ease", // Apply transition here
+                        },
+                      }}
+                    />
+                  </Stack>
+                </Link>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                  }}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+
+                    window.location.href = `tel:${phoneNumber}`;
+                  }}
+                >
+                  <Stack
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    p={1.1}
+                    pt={1.5}
+                  >
+                    <PhoneIcon
+                      sx={{
+                        color: "white",
+                        "&:hover": {
+                          transform: "scale(1.3)", // Scale the icon
+                          transition: "all 0.3s ease", // Apply transition here
+                        },
+                      }}
+                    />
+                  </Stack>
+                </Link>
+              </Stack>
+              <Link
+                to="/get-in-touch/"
+                style={{
+                  textDecoration: "none",
+                }}
+                onClick={() => {
+                  window.scrollTo(0, 0);
                 }}
               >
-                <Typography color={"white"}>Get In Touch</Typography>
-              </Stack>
-            </Link>
+                <Stack
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  width={"140px"}
+                  height={"40px"}
+                  border={"2px solid white"}
+                  backgroundColor={"#0D6EFD"}
+                  sx={{
+                    "&:hover": {
+                      color: "white",
+                    },
+                  }}
+                >
+                  <Typography color={"white"}>Get In Touch</Typography>
+                </Stack>
+              </Link>
+            </Stack>
           </Stack>
         </Stack>
       )}
@@ -1597,18 +1716,89 @@ const Nav = () => {
           justifyContent={"space-between"}
           alignItems={"center"}
           padding={"20px 0px"}
+          gap={{
+            xs: 1,
+            sm: 2,
+          }}
         >
-          <Stack width={{ xs: "45%", md: "30%" }}>
+          <Stack
+            width={{ xs: "100%", md: "100%" }}
+            direction={"row"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+          >
             <Link
               to={"/"}
               onClick={() => {
                 window.scroll(0, 0);
               }}
             >
-              <img src={lo} alt="" width={"100%"} height={"100%"} />
+              <Stack width={{ xs: "70%", sm: "55%", md: "60%" }}>
+                <img src={lo} alt="" width={"100%"} height={"100%"} />
+              </Stack>
             </Link>
+            <Stack direction={"row"} gap={1}>
+              <Link
+                to=""
+                style={{
+                  textDecoration: "none",
+                }}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  window.location.href = `mailto:${email}?subject=${"Company Inquiry"}&body=${"Hello, I am interested in your services. Please contact me at this email addres "}`;
+                }}
+              >
+                <Stack
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  p={1.1}
+                  pt={1.5}
+                >
+                  <EmailIcon
+                    sx={{
+                      fontSize: "25px",
+                      color: "white",
+                      "&:hover": {
+                        transform: "scale(1.3)", // Scale the icon
+                        transition: "all 0.3s ease", // Apply transition here
+                      },
+                    }}
+                  />
+                </Stack>
+              </Link>
+              <Link
+                style={{
+                  textDecoration: "none",
+                }}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+
+                  window.location.href = `tel:${phoneNumber}`;
+                }}
+              >
+                <Stack
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  p={1.1}
+                  pt={1.5}
+                >
+                  <PhoneIcon
+                    sx={{
+                      color: "white",
+                      "&:hover": {
+                        fontSize: "15px",
+                        transform: "scale(1.3)", // Scale the icon
+                        transition: "all 0.3s ease", // Apply transition here
+                      },
+                    }}
+                  />
+                </Stack>
+              </Link>
+            </Stack>
           </Stack>
+
           <Stack
+            direction={"row"}
             onClick={handleClick}
             width={"32px"}
             height={"32px"}
@@ -1623,13 +1813,17 @@ const Nav = () => {
             }}
           >
             {menuClick ? (
-              <CgMenuRight
-                style={{ color: "white", width: "32px", height: "32px" }}
-              />
+              <>
+                <CgMenuRight
+                  style={{ color: "white", width: "32px", height: "32px" }}
+                />
+              </>
             ) : (
-              <CgMenuRight
-                style={{ color: "white", width: "32px", height: "32px" }}
-              />
+              <>
+                <CgMenuRight
+                  style={{ color: "white", width: "32px", height: "32px" }}
+                />
+              </>
             )}
           </Stack>
         </Stack>
@@ -1769,7 +1963,7 @@ const Nav = () => {
               <Typography>
                 {" "}
                 <Link
-                  to="/about-us"
+                  to="/about-us/"
                   className="navlink-link"
                   onClick={() => {
                     window.scroll(0, 0);
@@ -1808,7 +2002,7 @@ const Nav = () => {
               <Typography>
                 {" "}
                 <Link
-                  to="/industries"
+                  to="/industries/"
                   className="navlink-link"
                   onClick={() => {
                     window.scroll(0, 0);
@@ -1847,7 +2041,7 @@ const Nav = () => {
               <Typography>
                 {" "}
                 <Link
-                  to="/case-studies"
+                  to="/case-studies/"
                   className="navlink-link"
                   onClick={() => {
                     window.scroll(0, 0);
@@ -2003,7 +2197,7 @@ const Nav = () => {
 
           <Stack alignItems={"center"} margin={"10px auto"}>
             <Link
-              to={"/get-in-touch"}
+              to={"/get-in-touch/"}
               onClick={() => {
                 window.scroll(0, 0);
               }}

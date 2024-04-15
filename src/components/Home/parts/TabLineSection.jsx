@@ -33,6 +33,7 @@ const TabLineSection = () => {
           autoPlay
           loop
           muted
+          controls={false}
         >
           <source src={bannerVideo} type="video/mp4" />
         </video>
@@ -45,61 +46,90 @@ const TabLineSection = () => {
             margin={{
               xxl: "0 97px",
               xl: "0 97px",
-              lg: "0 97px",
-              sm: "0 auto",
+
+              md: "0 97px",
+              xs: "0 auto",
             }}
             width={{
               xxl: "60%",
               xl: "60%",
               lg: "60%",
-              sm: "90%",
+              sm: "80%",
             }}
-            height={"90vh"}
+            height={{
+              xs: "70vh",
+              lg: "90vh",
+            }}
             gap={3}
             justifyContent={"center"}
           >
             <Typography
+              textAlign={{
+                xs: "center",
+                sm: "center",
+                md: "left",
+              }}
               fontSize={{
-                xxl: "48px",
-                xl: "36px",
-                sm: "24px",
+                xxl: "52px",
+                xl: "48px",
+                lg: "44px",
+                sm: "34px",
               }}
               fontWeight={"bold"}
               color={"white"}
             >
               Pioneering The Digital Frontier For Market Leaders
             </Typography>
-            <Typography variant="h6" color={"white"}>
+            <Typography
+              textAlign={{
+                xs: "center",
+                sm: "center",
+                md: "left",
+              }}
+              fontSize={{
+                xxl: "26px",
+                xl: "24px",
+                sm: "20px",
+              }}
+              color={"white"}
+            >
               Where advanced technology meets rapid innovation, transforming
               challenges into strategic masterpieces.
             </Typography>
-            <Link
-              to="/get-in-touch"
-              onClick={() => {
-                window.scrollTo(0, 0);
-              }}
-              style={{
-                textDecoration: "none",
+            <Stack
+              alignItems={{
+                xs: "center",
+                md: "flex-start",
               }}
             >
-              <Stack
-                justifyContent={"center"}
-                alignItems={"center"}
-                width={"140px"}
-                height={"40px"}
-                border={"2px solid white"}
-                backgroundColor={"#0D6EFD"}
-                sx={{
-                  "&:hover": {
-                    color: "white",
-                    opacity: 0.8,
-                    fontWeight: "bold",
-                  },
+              <Link
+                to="/get-in-touch"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+                style={{
+                  textDecoration: "none",
                 }}
               >
-                <Typography color={"white"}>Get In Touch</Typography>
-              </Stack>
-            </Link>
+                <Stack
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  width={"140px"}
+                  height={"40px"}
+                  border={"2px solid white"}
+                  backgroundColor={"#0D6EFD"}
+                  sx={{
+                    "&:hover": {
+                      color: "white",
+                      opacity: 0.8,
+                      fontWeight: "bold",
+                    },
+                  }}
+                >
+                  <Typography color={"white"}>Get In Touch</Typography>
+                </Stack>
+              </Link>
+            </Stack>
           </Stack>
         </Stack>
       </Stack>
